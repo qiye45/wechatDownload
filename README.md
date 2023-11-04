@@ -4,7 +4,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html或md文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/80ad2050-eb63-440d-8ea9-af245282f849)
 
-使用教程：
+# 使用教程：
 1.打开想要下载的公众号里面的随便一篇文章，复制链接到软件中，点击获取公众号id
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/5fbee2aa-f1b5-4a1e-b031-ab994debc4ee)
 
@@ -18,7 +18,8 @@
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/f5e95a6d-a22d-4bc0-980f-f0e91644145e)
 
 
-更新日志：
+
+# 更新日志：
 2.0更新：支持下载word、pdf文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/82934da3-ca55-4440-9f0d-3c8ba0a2106a)
 
