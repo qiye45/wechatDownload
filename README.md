@@ -25,6 +25,7 @@
 
 # 更新日志：
 2.1更新：支持下载评论，支持调整间隔时间，添加了快捷打开下载目录功能，修复下载失败时暂停的问题
+
 2.0更新：支持下载word、pdf文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/82934da3-ca55-4440-9f0d-3c8ba0a2106a)
 
