@@ -5,6 +5,7 @@
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/743a49b3-ad44-47c6-a95d-ce31e31dab05)
 2.2更新，支持暂停下载，支持按时间段下载，支持下载多篇推文的情况，支持导出公众号文章到表格，优化markdown的下载，支持markdown显示图片，修复下载闪退的问题
 
+聊天群：https://t.me/changfengbox
 # 使用教程：
 1.打开想要下载的公众号里面的随便一篇文章，复制链接到软件中，点击获取公众号id
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/5fbee2aa-f1b5-4a1e-b031-ab994debc4ee)
