@@ -2,10 +2,12 @@
 
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/743a49b3-ad44-47c6-a95d-ce31e31dab05)
-2.2更新，支持暂停下载，支持按时间段下载，支持下载多篇推文的情况，支持导出公众号文章到表格，优化markdown的下载，支持markdown显示图片，修复下载闪退的问题
+![image](https://github.com/qiye45/wechatDownload/assets/138199658/d26562c9-8152-4fbb-a745-f2f0b1eff73e)
+
+2.3更新：支持阅读量，点赞数，分享数，评论数的数据导出；文章会下载到以公众号名称的目录下；支持按照阅读量下载，支持其他链接导出Word、PDF、MD格式；下载md格式时，去掉结尾一些无关信息
 
 聊天群：https://t.me/changfengbox
+
 # 使用教程：
 1.打开想要下载的公众号里面的随便一篇文章，复制链接到软件中，点击获取公众号id
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/5fbee2aa-f1b5-4a1e-b031-ab994debc4ee)
@@ -25,6 +27,8 @@
 
 
 # 更新日志：
+2.2更新，支持暂停下载，支持按时间段下载，支持下载多篇推文的情况，支持导出公众号文章到表格，优化markdown的下载，支持markdown显示图片，修复下载闪退的问题
+
 2.1更新：支持下载评论，支持调整间隔时间，添加了快捷打开下载目录功能，修复下载失败时暂停的问题
 
 2.0更新：支持下载word、pdf文件
