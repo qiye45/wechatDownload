@@ -2,7 +2,7 @@
 
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/d26562c9-8152-4fbb-a745-f2f0b1eff73e)
+![image](https://github.com/qiye45/wechatDownload/assets/138199658/5aa3ed8c-5c21-41db-867c-4c731681af62)
 
 2.3更新：支持阅读量，点赞数，分享数，评论数的数据导出；文章会下载到以公众号名称的目录下；支持按照阅读量下载，支持其他链接导出Word、PDF、MD格式；下载md格式时，去掉结尾一些无关信息
 
