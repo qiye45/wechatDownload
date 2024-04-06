@@ -1,6 +1,7 @@
 # 微信公众号文章批量下载工具
 
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书
+
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/5aa3ed8c-5c21-41db-867c-4c731681af62)
 
