@@ -3,7 +3,7 @@
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书
 
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/0ac0fd21-6e60-43f3-a3c7-5f0c7bcce105)
+![image](https://github.com/qiye45/wechatDownload/assets/138199658/3e41b554-8f47-4ccc-893a-b5666d635d4d)
 
 2.4 支持下载视频、音频、封面图；修复微信文章下载失败的问题#58；添加自动监听剪切板功能，方便下载；添加下载失败的提示，修复无限出现暂停的提示
 
