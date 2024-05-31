@@ -3,9 +3,9 @@
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书，支持Window、Macos
 
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/a419a193-f09c-4df0-b152-550f937ccc17)
+![image](https://github.com/qiye45/wechatDownload/assets/138199658/de9b412c-d209-4746-a249-2d975b7c920a)
 
-2.5 支持了Macos版本🥳；支持表格的实时导出；修复数据采集缺失的问题；修复下载一些公众号失败、导出表格的数据不完整的问题；支持多篇文章下载
+2.6更新 修复下载空白的问题 https://github.com/qiye45/wechatDownload/issues/111 ，支持图文格式下载，支持以公众号文章标题命名视频、音频和封面啦
 
 聊天群：https://t.me/changfengbox
 
