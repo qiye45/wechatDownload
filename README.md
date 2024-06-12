@@ -13,7 +13,7 @@
 1.打开想要下载的公众号里面的随便一篇文章，复制链接到软件中，点击获取公众号id
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/5fbee2aa-f1b5-4a1e-b031-ab994debc4ee)
 
-2.在微信打开刚刚复制的链接，等待一会，软件会自动获取秘钥
+2.在微信打开刚刚复制的链接（把自动复制好的链接，发到微信的文件传输助手，再点击打开），等待一会，软件会自动获取秘钥
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/2313e0ab-399f-4159-a84f-3cfbe4945fb4)
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/9ed6697d-14ce-4009-8a61-a3fdea64c29f)
 
