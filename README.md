@@ -5,7 +5,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html/md/pdf/docx文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/2da2511b-487d-4677-9f66-d609631719f8)
 
-2.7更新 支持下载评论回复，自动保存设置的选项，跳过已下载的文章；修复剪切板监听失败的问题
+3.0更新 优化文章排版 https://github.com/qiye45/wechatDownload/issues/134；支持翻页到指定日期范围，手动调整页数；支持Mhtml下载；修复闪退问题
 
 聊天群：https://t.me/changfengbox
 
@@ -28,6 +28,8 @@
 
 
 # 更新日志：
+
+2.7更新 支持下载评论回复，自动保存设置的选项，跳过已下载的文章；修复剪切板监听失败的问题
 
 2.6更新 修复下载空白的问题 https://github.com/qiye45/wechatDownload/issues/111 ，支持图文格式下载，支持以公众号文章标题命名视频、音频和封面啦
 
