@@ -5,7 +5,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/7d2201e4-7c84-416a-8787-7eb273768d83)
 
-3.0更新 优化文章排版 [#134](https://github.com/qiye45/wechatDownload/issues/134) ；支持翻页到指定日期范围，手动调整页数；支持Mhtml下载；修复闪退问题
+3.0更新 优化文章排版 [#134](https://github.com/qiye45/wechatDownload/issues/134) ；支持翻页到指定日期范围，手动调整页数；支持mhtml下载；修复闪退问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
