@@ -6,6 +6,7 @@
 ![image](https://github.com/user-attachments/assets/5062bdb5-4512-4db7-9eba-e4f0200c68ae)
 
 3.1更新 修复获取秘钥失败问题 [#161](https://github.com/qiye45/wechatDownload/issues/161)
+
 3.0更新 优化文章排版 [#134](https://github.com/qiye45/wechatDownload/issues/134) ；支持翻页到指定日期范围，手动调整页数；支持mhtml下载；修复闪退问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
