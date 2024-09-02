@@ -5,9 +5,8 @@
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
 ![image](https://github.com/user-attachments/assets/5062bdb5-4512-4db7-9eba-e4f0200c68ae)
 
-3.1更新 修复获取秘钥失败问题 [#161](https://github.com/qiye45/wechatDownload/issues/161)
+3.1更新 修复获取秘钥、公众号id失败、自定义时长闪退的问题；提示前面加上当前时间
 
-3.0更新 优化文章排版 [#134](https://github.com/qiye45/wechatDownload/issues/134) ；支持翻页到指定日期范围，手动调整页数；支持mhtml下载；修复闪退问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
@@ -32,6 +31,10 @@
 
 
 # 更新日志：
+
+3.1更新 修复获取秘钥失败问题 [#161](https://github.com/qiye45/wechatDownload/issues/161)
+
+3.0更新 优化文章排版 [#134](https://github.com/qiye45/wechatDownload/issues/134) ；支持翻页到指定日期范围，手动调整页数；支持mhtml下载；修复闪退问题
 
 2.7更新 支持下载评论回复，自动保存设置的选项，跳过已下载的文章；修复剪切板监听失败的问题
 
