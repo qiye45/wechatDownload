@@ -5,8 +5,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
 ![image](https://github.com/user-attachments/assets/5062bdb5-4512-4db7-9eba-e4f0200c68ae)
 
-3.1更新 修复获取秘钥、公众号id失败、自定义时长闪退的问题；提示前面加上当前时间
-
+3.2更新 修复获取秘钥、公众号id失败、自定义时长闪退的问题；提示前面加上当前时间
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
