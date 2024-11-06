@@ -3,9 +3,9 @@
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书，支持Window、Macos
 
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
-![image](https://github.com/user-attachments/assets/ac0a81e8-373b-406c-8af7-7ad1c6a4dc99)
+![image](https://github.com/user-attachments/assets/c0b67aa3-d137-4f58-9584-1966ae9c708c)
 
-3.2更新 修复获取秘钥、公众号id失败、自定义时长闪退的问题；提示前面加上当前时间
+3.3更新 下载的封面视频音频支持添加日期前缀，修复评论和评论回复下载失败的问题、导出表格功能标题被截断的问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
@@ -30,6 +30,8 @@
 
 
 # 更新日志：
+
+3.2更新 修复获取秘钥、公众号id失败、自定义时长闪退的问题；提示前面加上当前时间
 
 3.1更新 修复获取秘钥失败问题 [#161](https://github.com/qiye45/wechatDownload/issues/161)
 
