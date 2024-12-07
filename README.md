@@ -5,7 +5,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
 ![image](https://github.com/user-attachments/assets/36f37ce2-ea24-4874-99f8-47ebc2b7afb7)
 
-3.4 添加暂停下载功能；添加开始下载页数小于0，会重新下载（填-1）；修复获取阅读量失败的问题
+3.4更新 添加暂停下载功能；添加开始下载页数小于0，会重新下载（填-1）；修复获取阅读量失败的问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
