@@ -5,7 +5,7 @@
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件
 ![image](https://github.com/user-attachments/assets/b9aa09af-1272-4d9e-a40f-96158bcf2f91)
 
-3.5更新：修复获取公众号id失败、下载失败的问题；支持下载公众号合集（专栏）；添加开始下载页数提示
+3.5更新：修复获取公众号id失败、下载失败的问题；支持下载公众号合集（专栏）[#148](https://github.com/qiye45/wechatDownload/issues/148)；添加开始下载页数提示
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
