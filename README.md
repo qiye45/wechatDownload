@@ -4,11 +4,13 @@
 
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件，支持评论、合集下载，保存文章内图片、视频、音频文件
 
-![image](https://github.com/user-attachments/assets/b9aa09af-1272-4d9e-a40f-96158bcf2f91)
+![image](https://github.com/user-attachments/assets/c8b3024c-2735-4240-9624-e1d208d8d49c)
 
-3.5更新：修复获取公众号id失败、下载失败的问题；支持下载公众号合集（专栏）[#148](https://github.com/qiye45/wechatDownload/issues/148)；添加开始下载页数提示
+3.6 支持微信4.0测试版本；修复部分合集下载失败的问题；适配黑暗模式；文件开头添加日期增加分隔符
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
+欢迎关注公众号：长风的储物柜，获取最新更新消息
+![mp weixin qq com_cgi-bin_settingpage_t=setting_index action=index token=1742683515 lang=zh_CN (1)](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
 
 聊天群：https://t.me/changfengbox
 
@@ -31,6 +33,8 @@
 
 
 # 更新日志：
+
+3.5更新：修复获取公众号id失败、下载失败的问题；支持下载公众号合集（专栏）[#148](https://github.com/qiye45/wechatDownload/issues/148)；添加开始下载页数提示
 
 3.4更新 添加暂停下载功能、添加开始下载页数小于0，会重新下载（填-1）、修复获取阅读量失败的问题
 
