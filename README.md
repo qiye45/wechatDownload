@@ -9,6 +9,7 @@
 3.6 支持微信4.0测试版本；修复部分合集下载失败的问题；适配黑暗模式；文件开头添加日期增加分隔符
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
+
 欢迎关注公众号：长风的储物柜，获取最新更新消息
 
 ![mp weixin qq com_cgi-bin_settingpage_t=setting_index action=index token=1742683515 lang=zh_CN (1)](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
