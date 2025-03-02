@@ -10,7 +10,7 @@
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
-欢迎关注公众号：长风的储物柜，获取最新更新消息
+欢迎关注公众号：长风的储物柜，获取最新更新消息🥳
 
 ![mp weixin qq com_cgi-bin_settingpage_t=setting_index action=index token=1742683515 lang=zh_CN (1)](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
 
