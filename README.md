@@ -4,7 +4,7 @@
 
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件，支持评论、合集下载，保存文章内图片、视频、音频文件
 
-![image](https://github.com/user-attachments/assets/c8b3024c-2735-4240-9624-e1d208d8d49c)
+![image](https://github.com/user-attachments/assets/394cf204-b408-4dee-a18c-103762576c28)
 
 3.7更新 支持微信4.0测试版；修复部分合集下载失败的问题；修复自定义时间范围下载的问题
 
