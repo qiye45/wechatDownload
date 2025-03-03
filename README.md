@@ -1,6 +1,6 @@
 # 微信公众号文章批量下载工具
 
-一款可以批量下载微信公众号文章内容的小工具，无需安装证书，支持Window、Macos
+一款可以批量下载微信公众号文章内容的小工具，无需安装证书，支持Window、MacOS
 
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件，支持评论、合集下载，保存文章内图片、视频、音频文件
 
@@ -12,22 +12,24 @@
 
 欢迎关注公众号：长风的储物柜，获取最新更新消息🥳
 
-![mp weixin qq com_cgi-bin_settingpage_t=setting_index action=index token=1742683515 lang=zh_CN (1)](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
+![微信公众号](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
 
 聊天群：https://t.me/changfengbox
 
 # 使用教程：
 1.打开想要下载的公众号里面的随便一篇文章，复制链接到软件中，点击获取公众号id
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/5fbee2aa-f1b5-4a1e-b031-ab994debc4ee)
+![image](https://github.com/user-attachments/assets/9e8d05ea-0c23-4ac0-b337-c2e0958dbe8e)
+![image](https://github.com/user-attachments/assets/62faabee-9d93-4e0d-a4c7-5d045d47b791)
+
 
 2.在微信打开刚刚复制的链接（把自动复制好的链接，发到微信的文件传输助手，再点击打开），等待一会，软件会自动获取秘钥
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/2313e0ab-399f-4159-a84f-3cfbe4945fb4)
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/9ed6697d-14ce-4009-8a61-a3fdea64c29f)
+![image](https://github.com/user-attachments/assets/5120f2ba-1049-4381-9c48-81d89c88a7c2)
 
 3.然后就可以下载公众号的文章啦
 
-![image](https://github.com/qiye45/wechatDownload/assets/138199658/965aa288-8ece-4850-8396-efb93e464e6e)
+![image](https://github.com/user-attachments/assets/6c461c86-0cd6-4f5c-8c19-c6770e5e9cee)
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/f5e95a6d-a22d-4bc0-980f-f0e91644145e)
+
 注意事项：需要用微信内置浏览器打开复制的链接
 
 ![image](https://github.com/qiye45/wechatDownload/assets/138199658/bca604e8-d756-4971-aa6d-8b0c8cf88753)
