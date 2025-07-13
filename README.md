@@ -6,7 +6,7 @@
 
 <img width="1263" height="898" alt="image" src="https://github.com/user-attachments/assets/95201a49-0de9-4347-8e9a-347907923093" />
 
-3.9更新 修复文章下载失败的问题；优化Markdown排版；Excel增加公众号名称列表
+3.9更新 修复批量下载失败的问题；优化Markdown排版；导出公众号数据中，Excel增加公众号名称列表
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
