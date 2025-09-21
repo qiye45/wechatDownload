@@ -4,9 +4,8 @@
 
 支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx文件，支持评论、合集下载，保存文章内图片、视频、音频文件
 
-<img width="1263" height="898" alt="image" src="https://github.com/user-attachments/assets/95201a49-0de9-4347-8e9a-347907923093" />
-
-3.9更新 修复批量下载失败的问题；优化Markdown排版；导出公众号数据中，Excel增加公众号名称列表
+<img width="1249" height="887" alt="image" src="https://github.com/user-attachments/assets/1f66abe7-84f6-4131-ba07-82abdeab81f8" />
+4.0更新 支持图片下载、日志记录的功能；修复文章中视频下载失败、图文下载失败、自定义时间的问题
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
@@ -40,6 +39,8 @@
 
 
 # 更新日志：
+
+3.9更新 修复批量下载失败的问题；优化Markdown排版；导出公众号数据中，Excel增加公众号名称列表
 
 3.8更新 支持可选下载封面/音频/视频；支持下载纯文字文章；修复多篇文章时，只能下载第一篇的问题；修复合集下载失败的问题
 
