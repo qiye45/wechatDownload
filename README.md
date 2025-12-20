@@ -8,8 +8,6 @@
 
 4.1更新 提升获取密钥的速度；修复图文格式、视频下载失败，部分公众号获取不到ID的问题；优化下载评论时的报错信息
 
-下载链接：https://pan.quark.cn/s/09bdfa78d09b
-
 欢迎关注公众号：长风的储物柜，获取最新更新消息🥳
 
 ![微信公众号](https://github.com/user-attachments/assets/584c65c4-da1c-4e31-bd92-b18e3589483d)
