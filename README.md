@@ -6,7 +6,7 @@
 
 <img width="1248" height="894" alt="image" src="https://github.com/user-attachments/assets/9742e96d-b826-4179-bbcd-08c147d90fbe" />
 
-4.1更新 提高获取密钥的速度；修复图文格式、视频下载失败，部分公众号获取不到ID的问题；优化下载评论时的报错信息
+4.1更新 提升获取密钥的速度；修复图文格式、视频下载失败，部分公众号获取不到ID的问题；优化下载评论时的报错信息
 
 下载链接：https://pan.quark.cn/s/09bdfa78d09b
 
