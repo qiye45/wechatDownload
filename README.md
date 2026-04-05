@@ -2,7 +2,7 @@
 
 一款可以批量下载微信公众号文章内容的小工具，无需安装证书，支持Window、MacOS
 
-支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx/csv表格文件，支持评论、合集下载，保存文章内图片、视频、音频文件
+支持下载微信公众号的历史消息，可以保存文章为html/mhtml/md/pdf/docx/csv表格文件，支持评论、合集下载，保存文章内图片、视频、音频文件，支持MCP调用和Skill
 
 <img width="1247" height="890" alt="image" src="https://github.com/user-attachments/assets/3088b7fb-17b0-461b-8330-496dfcb5be1f" />
 
