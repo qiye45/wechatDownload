@@ -1,0 +1,29 @@
+{
+  "skill_name": "wechat-article-downloader",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我下载这篇微信文章：https://mp.weixin.qq.com/s/SK5I96BMvkjSsH8VqWJRyA",
+      "expected_output": "检查MCP服务状态，如果可用则调用single_article_download工具下载文章，告知用户下载已开始",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我想批量下载这个公众号的所有文章，这是其中一篇：https://mp.weixin.qq.com/s/SK5I96BMvkjSsH8VqWJRyA",
+      "expected_output": "检查MCP服务，调用get_public_account_id获取公众号密钥，指导用户在微信中打开生成的链接，等待确认后调用batch_download_articles",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "获取这个公众号的密钥，文章链接是 https://mp.weixin.qq.com/s/SK5I96BMvkjSsH8VqWJRyA",
+      "expected_output": "检查MCP服务，调用get_public_account_id，解释用户需要复制生成的链接并在微信桌面客户端打开，等待工具自动获取密钥",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "把这个公众号的文章数据导出成CSV表格",
+      "expected_output": "检查MCP服务和密钥状态，调用export_article_data导出CSV文件，告知用户文件保存位置",
+      "files": []
+    }
+  ]
+}
