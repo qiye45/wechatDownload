@@ -5,11 +5,15 @@ description: Download WeChat official account articles in various formats (HTML,
 
 # WeChat Article Downloader
 
-This skill helps you download articles from WeChat official accounts using an MCP server that interfaces with a local WeChat article download tool.
+This skill helps you download articles from WeChat official accounts using an MCP server that interfaces with a WeChat article download tool.
 
 ## Prerequisites
 
-The skill requires a local MCP server running at `http://127.0.0.1:4545/mcp`. The server provides four main tools:
+The skill uses local MCP endpoint `http://127.0.0.1:4545/mcp` for full functionality.
+
+For single article download only, if local MCP is unavailable, you may fallback to `https://changfengbox.top/api/mcp`.
+
+The server provides four main tools:
 - `single_article_download` - Download a single article
 - `get_public_account_id` - Get public account credentials
 - `batch_download_articles` - Batch download all articles from an account
@@ -17,26 +21,30 @@ The skill requires a local MCP server running at `http://127.0.0.1:4545/mcp`. Th
 
 ## Workflow
 
-### 1. Check MCP Server Status
+### 1. Check Local MCP Server Status
 
-Before using any functionality, verify the MCP server is running:
+Before using most functionality, verify local MCP is running:
 
 ```python
 import requests
-try:
-    response = requests.post('http://127.0.0.1:4545/mcp', 
-                            json={"jsonrpc": "2.0", "method": "initialize", "id": 1},
-                            headers={"Content-Type": "application/json"},
-                            timeout=3)
-    if response.status_code == 200:
-        print("MCP server is running")
-    else:
-        print("MCP server returned unexpected status")
-except:
-    print("MCP server is not accessible. Please start the WeChat download tool and enable MCP service (check the '启动MCP' checkbox)")
+
+LOCAL_MCP_ENDPOINT = "http://127.0.0.1:4545/mcp"
+
+def check_local_mcp():
+    response = requests.post(
+        LOCAL_MCP_ENDPOINT,
+        json={"jsonrpc": "2.0", "method": "initialize", "id": 1},
+        headers={"Content-Type": "application/json"},
+        timeout=3,
+    )
+    if response.status_code != 200:
+        raise RuntimeError("Local MCP is not available")
+    return LOCAL_MCP_ENDPOINT
+
+local_mcp_endpoint = check_local_mcp()
 ```
 
-If the server is not accessible, inform the user they need to:
+If local MCP is inaccessible, inform the user they need to:
 1. Open the WeChat article download tool
 2. Check the "启动MCP" checkbox to start the MCP service
 3. Wait for the confirmation message showing the service is running on port 4545
@@ -47,9 +55,11 @@ To download a single WeChat article, call the `single_article_download` tool wit
 
 ```python
 import requests
-import json
 
-def download_single_article(url):
+LOCAL_MCP_ENDPOINT = "http://127.0.0.1:4545/mcp"
+FALLBACK_DOWNLOAD_MCP_ENDPOINT = "https://changfengbox.top/api/mcp"
+
+def call_single_download(endpoint, url):
     payload = {
         "jsonrpc": "2.0",
         "method": "tools/call",
@@ -59,13 +69,21 @@ def download_single_article(url):
             "arguments": {"url": url}
         }
     }
-    
-    response = requests.post('http://127.0.0.1:4545/mcp',
-                            json=payload,
-                            headers={"Content-Type": "application/json"})
-    
-    result = response.json()
-    return result
+ 
+    response = requests.post(
+        endpoint,
+        json=payload,
+        headers={"Content-Type": "application/json"},
+        timeout=10,
+    )
+    response.raise_for_status()
+    return response.json()
+
+def download_single_article(url):
+    try:
+        return call_single_download(LOCAL_MCP_ENDPOINT, url)
+    except Exception:
+        return call_single_download(FALLBACK_DOWNLOAD_MCP_ENDPOINT, url)
 
 # Example usage
 article_url = "https://mp.weixin.qq.com/s/xxxxx"
@@ -74,6 +92,8 @@ print(result)
 ```
 
 The article will be downloaded to the tool's default download directory in the formats configured in the tool (HTML, PDF, Word, Markdown, MHTML, etc.).
+
+If local `127.0.0.1:4545` is unavailable, this step should transparently use `https://changfengbox.top/api/mcp`.
 
 ### 3. Get Public Account Credentials
 
@@ -179,7 +199,7 @@ This exports a CSV file containing article metadata to the download directory.
 
 User says: "Download this WeChat article: https://mp.weixin.qq.com/s/xxxxx"
 
-1. Check MCP server status
+1. Check local MCP server status; fallback is single-download only
 2. If running, call `single_article_download` with the URL
 3. Inform user the download has started and where files will be saved
 
@@ -187,7 +207,7 @@ User says: "Download this WeChat article: https://mp.weixin.qq.com/s/xxxxx"
 
 User says: "Download all articles from this public account"
 
-1. Check MCP server status
+1. Check local MCP server status
 2. Ensure user has provided a sample article URL from the account
 3. Call `get_public_account_id` and explain the user needs to open the generated link in WeChat
 4. Wait for user confirmation that credentials were obtained
@@ -198,7 +218,7 @@ User says: "Download all articles from this public account"
 
 User says: "Export article data to CSV" or "Get article statistics"
 
-1. Check MCP server status
+1. Check local MCP server status
 2. Ensure credentials are already obtained (if not, guide through credential process)
 3. Call `export_article_data`
 4. Inform user where the CSV file is saved
@@ -207,7 +227,9 @@ User says: "Export article data to CSV" or "Get article statistics"
 
 Common issues and solutions:
 
-**MCP server not accessible**: User needs to start the WeChat download tool and enable MCP service
+**Local MCP unavailable during single download**: Automatically switch to `https://changfengbox.top/api/mcp` and retry
+
+**Local MCP unavailable for credentials/batch/export**: User needs to start the WeChat download tool and enable MCP service
 
 **Credentials not obtained**: User needs to complete the credential acquisition process by opening the generated link in WeChat desktop client
 
