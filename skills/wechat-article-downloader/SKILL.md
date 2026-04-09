@@ -1,6 +1,6 @@
 ---
 name: wechat-article-downloader
-description: Download WeChat official account articles in various formats (HTML, PDF, Word, Markdown, MHTML). Use this skill when users want to download WeChat articles, save public account content, batch download articles from a WeChat official account, export article data to CSV, or retrieve article metadata. This skill handles both single article downloads and bulk operations, and can export structured data for analysis.
+description: Download WeChat official account articles in multiple formats (HTML, PDF, Word, Markdown, TXT, MHTML), including single article download, collection (appmsgalbum) download, local bulk workflows, and metadata export. Use this skill when users ask to download WeChat articles, download public account collections, batch pull account content, or export article data.
 ---
 
 # WeChat Article Downloader
@@ -11,13 +11,21 @@ This skill helps you download articles from WeChat official accounts using an MC
 
 The skill uses local MCP endpoint `http://127.0.0.1:4545/mcp` for full functionality.
 
-For single article download only, if local MCP is unavailable, you may fallback to `https://changfengbox.top/api/mcp`.
+If local MCP is unavailable, you may fallback to `https://changfengbox.top/api/mcp` for remote-supported tools.
 
-The server provides four main tools:
+Local MCP tools:
 - `single_article_download` - Download a single article
 - `get_public_account_id` - Get public account credentials
 - `batch_download_articles` - Batch download all articles from an account
 - `export_article_data` - Export article metadata to CSV
+
+Remote fallback MCP (`https://changfengbox.top/api/mcp`) currently supports:
+- Methods: `initialize`, `tools/list`, `tools/call`
+- Tools in `tools/call` `name`:
+  - `wechat` - Download a single article
+  - `wechat_collection` - Download a public account collection (`appmsgalbum`)
+
+Important: remote fallback does **not** expose local tool names like `single_article_download`, `batch_download_articles`, `get_public_account_id`, or `export_article_data`.
 
 ## Workflow
 
@@ -51,7 +59,7 @@ If local MCP is inaccessible, inform the user they need to:
 
 ### 2. Single Article Download
 
-To download a single WeChat article, call the `single_article_download` tool with the article URL:
+Use local tool first. If local MCP fails, fallback to remote `wechat` tool.
 
 ```python
 import requests
@@ -59,17 +67,17 @@ import requests
 LOCAL_MCP_ENDPOINT = "http://127.0.0.1:4545/mcp"
 FALLBACK_DOWNLOAD_MCP_ENDPOINT = "https://changfengbox.top/api/mcp"
 
-def call_single_download(endpoint, url):
+def call_tool(endpoint, tool_name, arguments, req_id=2):
     payload = {
         "jsonrpc": "2.0",
         "method": "tools/call",
-        "id": 2,
+        "id": req_id,
         "params": {
-            "name": "single_article_download",
-            "arguments": {"url": url}
+            "name": tool_name,
+            "arguments": arguments,
         }
     }
- 
+
     response = requests.post(
         endpoint,
         json=payload,
@@ -81,9 +89,29 @@ def call_single_download(endpoint, url):
 
 def download_single_article(url):
     try:
-        return call_single_download(LOCAL_MCP_ENDPOINT, url)
+        return call_tool(
+            LOCAL_MCP_ENDPOINT,
+            "single_article_download",
+            {"url": url},
+            req_id=2,
+        )
     except Exception:
-        return call_single_download(FALLBACK_DOWNLOAD_MCP_ENDPOINT, url)
+        remote_config = {
+            "保存离线网页": True,
+            "HTML": True,
+            "MD": True,
+            "PDF": False,
+            "WORD": False,
+            "TXT": False,
+            "MHTML": False,
+            "文件开头添加日期": True,
+        }
+        return call_tool(
+            FALLBACK_DOWNLOAD_MCP_ENDPOINT,
+            "wechat",
+            {"url": url, "config": remote_config},
+            req_id=3,
+        )
 
 # Example usage
 article_url = "https://mp.weixin.qq.com/s/xxxxx"
@@ -93,9 +121,47 @@ print(result)
 
 The article will be downloaded to the tool's default download directory in the formats configured in the tool (HTML, PDF, Word, Markdown, MHTML, etc.).
 
-If local `127.0.0.1:4545` is unavailable, this step should transparently use `https://changfengbox.top/api/mcp`.
+Remote `wechat` config can use these keys:
+- `保存离线网页`
+- `HTML`
+- `MD`
+- `PDF`
+- `WORD`
+- `TXT`
+- `MHTML`
+- `文件开头添加日期`
 
-### 3. Get Public Account Credentials
+If local `127.0.0.1:4545` is unavailable, this step should transparently use `https://changfengbox.top/api/mcp` with tool name `wechat`.
+
+### 3. Download Collection (`appmsgalbum`)
+
+For collection URLs, call remote `wechat_collection` via `tools/call`:
+
+```python
+def download_collection(collection_url):
+    payload = {
+        "jsonrpc": "2.0",
+        "method": "tools/call",
+        "id": 4,
+        "params": {
+            "name": "wechat_collection",
+            "arguments": {
+                "url": collection_url,
+            },
+        },
+    }
+
+    response = requests.post(
+        "https://changfengbox.top/api/mcp",
+        json=payload,
+        headers={"Content-Type": "application/json"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    return response.json()
+```
+
+### 4. Get Public Account Credentials (Local Only)
 
 Before batch downloading, you need to obtain the public account credentials. This triggers a process where:
 1. The tool extracts the account ID from a sample article URL
@@ -131,7 +197,7 @@ After calling this, the user needs to:
 3. Wait for the tool to automatically capture the credentials
 4. Look for "获取密钥成功" (credentials obtained successfully) message
 
-### 4. Batch Download Articles
+### 5. Batch Download Articles (Local Only)
 
 Once credentials are obtained, you can batch download all articles from the public account:
 
@@ -164,7 +230,7 @@ The batch download will:
 - Organize files by public account name
 - Show progress in the tool's log window
 
-### 5. Export Article Data
+### 6. Export Article Data (Local Only)
 
 To export article metadata (titles, URLs, publish dates, read counts, like counts, etc.) to CSV:
 
@@ -199,11 +265,21 @@ This exports a CSV file containing article metadata to the download directory.
 
 User says: "Download this WeChat article: https://mp.weixin.qq.com/s/xxxxx"
 
-1. Check local MCP server status; fallback is single-download only
-2. If running, call `single_article_download` with the URL
-3. Inform user the download has started and where files will be saved
+1. Check local MCP server status
+2. If local is running, call `single_article_download` with the URL
+3. If local is unavailable, call remote `wechat` with `url + config`
+4. Inform user the download has started and where files will be saved
 
-### Workflow 2: Batch Download from a Public Account
+### Workflow 2: Download a Collection (`appmsgalbum`)
+
+User says: "Download this WeChat collection/appmsgalbum"
+
+1. Call remote `tools/call` with `name="wechat_collection"`
+2. Pass the collection URL in `arguments`
+3. If needed, validate tool arguments by calling `tools/list` first
+4. Inform user where files are saved
+
+### Workflow 3: Batch Download from a Public Account (Local Only)
 
 User says: "Download all articles from this public account"
 
@@ -214,7 +290,7 @@ User says: "Download all articles from this public account"
 5. Call `batch_download_articles` to start the bulk download
 6. Monitor progress through the tool's interface
 
-### Workflow 3: Export Article Metadata
+### Workflow 4: Export Article Metadata (Local Only)
 
 User says: "Export article data to CSV" or "Get article statistics"
 
@@ -227,9 +303,11 @@ User says: "Export article data to CSV" or "Get article statistics"
 
 Common issues and solutions:
 
-**Local MCP unavailable during single download**: Automatically switch to `https://changfengbox.top/api/mcp` and retry
+**Local MCP unavailable during single download**: Automatically switch to `https://changfengbox.top/api/mcp` and retry with `name="wechat"`.
 
-**Local MCP unavailable for credentials/batch/export**: User needs to start the WeChat download tool and enable MCP service
+**Remote tool name mismatch**: Do not use local names on remote fallback. Use only `wechat` or `wechat_collection`.
+
+**Local MCP unavailable for credentials/batch/export**: These are local-only workflows. User needs to start the WeChat download tool and enable MCP service.
 
 **Credentials not obtained**: User needs to complete the credential acquisition process by opening the generated link in WeChat desktop client
 
